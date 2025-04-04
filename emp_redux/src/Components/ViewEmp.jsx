@@ -23,6 +23,8 @@ const ViewEmp = () => {
         <th>Id</th>
         <th>Name</th>
         <th>Email</th>
+        <th>Gender</th>
+        <th>Hobby</th>
         <th>Department</th>
         <th>Action</th>
       </tr>
@@ -33,6 +35,8 @@ const ViewEmp = () => {
             <td>{emp.empid}</td>
             <td>{emp.name}</td>
             <td>{emp.email}</td>
+            <td>{emp.gender}</td>
+            <td>{emp.hoby.toString()}</td>
             <td>{emp.department}</td>
             <td><Link to={'/update/'+emp.empid}><Button variant="primary" className='me-2'>Edit</Button></Link>
             <Button variant="danger" onClick={(e)=>{onDelete(e,emp.empid)}}>Delete</Button></td>

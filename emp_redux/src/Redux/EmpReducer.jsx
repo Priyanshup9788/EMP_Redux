@@ -27,13 +27,17 @@ let initialState = {
             empid: 1,
             name: 'Priyanshu',
             email: 'priyanshu@gmail.com',
-            department: 'IT'
+            department: 'IT',
+            hoby: ['Reading', 'Coding'],
+            gender:'Male'
         },
         {
             empid: 2,
             name: 'Vishv',
             email: 'vishv@gmail.com',
             department: 'Account',
+            hoby: ['Reading', 'Coding'],
+            gender:'Female'
         }
     ]
 }
