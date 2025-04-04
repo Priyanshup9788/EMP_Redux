@@ -26,13 +26,13 @@ let initialState = {
         {
             empid: 1,
             name: 'Priyanshu',
-            email:'priyanshu@gmail.com',
+            email: 'priyanshu@gmail.com',
             department: 'IT'
         },
         {
             empid: 2,
             name: 'Vishv',
-            email:'vishv@gmail.com',
+            email: 'vishv@gmail.com',
             department: 'Account',
         }
     ]
@@ -45,20 +45,20 @@ const EmpReducer = (state = initialState, action) => {
         case VIEWEMP:
             return state;
         case DELETEEMP:
-            state.employee=state.employee.filter((emp)=>emp.empid!=action.payload)
+            state.employee = state.employee.filter((emp) => emp.empid != action.payload)
             return state;
         case EDITEMP:
             {
-            state.employee=state.employee.map((emp)=>{
-                console.log(action.payload.empid)
-                if(emp.empid==action.payload.empid)
-                {
-                  return  emp=action.payload
-                }
-                return emp
+                console.log(action.payload)
+                state.employee = state.employee.map((emp) => {
+                    if (emp.empid == action.payload.empid) {
+                        return emp = action.payload
+                    }
+                    return emp
                 })
-                return state}
-        default :
+                return state
+            }
+        default:
             return state;
     }
 }

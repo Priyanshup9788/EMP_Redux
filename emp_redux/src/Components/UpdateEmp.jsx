@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import { useDispatch, useSelector } from 'react-redux';
-import { addEmp, editEmp } from '../Redux/action';
+import {  editEmp } from '../Redux/action';
 import { useParams } from 'react-router-dom';
 
 const UpdateEmp = () => {
@@ -12,12 +12,15 @@ const UpdateEmp = () => {
     let empData = useSelector((store) => store.employee.employee);
     const [allEmp, setAllEmp] = useState(empData);
     const [newEmp, setNewEmp] = useState(()=>{
-        return allEmp.map((emp)=>{
+        let emp1={}
+        allEmp.map((emp)=>{
             if(emp.empid==id.id)
             {
-                return emp;
+                emp1={...emp}
             }
-        })[0]
+            
+        })
+        return emp1
     })
     const[department,setDepartment]=useState(["IT","Account","Sales","Purchase"])
 
@@ -33,7 +36,6 @@ const UpdateEmp = () => {
             return;
         }
         let emp = { ...newEmp }
-        console.log(emp)
         dispatch(editEmp(emp));
         setNewEmp({})
     }

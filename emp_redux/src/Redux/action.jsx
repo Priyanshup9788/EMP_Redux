@@ -25,7 +25,7 @@ export const deleteEmp = (id)=>(
 
 export const editEmp = (emp)=>(
     {
-        type: DELETEEMP,
+        type: EDITEMP,
         payload:emp
     }
 );
